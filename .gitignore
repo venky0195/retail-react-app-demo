@@ -1,0 +1,47 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# macOS files
+.DS_Store
+
+# Logs
+logs/
+*.log
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+
+# PWA specific
+service-worker.js
+workbox-*.js
+precache-manifest.*.js
+
+node_modules*
