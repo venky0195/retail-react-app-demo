@@ -30,7 +30,7 @@ const options = {
     mobify: config,
 
     // The port that the local dev server listens on
-    port: 3000,
+    port: process.env.PORT,
 
     // The protocol on which the development Express app listens.
     // Note that http://localhost is treated as a secure context for development,
@@ -356,6 +356,15 @@ const {handler} = runtime.createHandler(options, (app) => {
     app.get('/worker.js(.map)?', runtime.serveServiceWorker)
     app.get('*', runtime.render)
 })
+
+const app = express();
+
+app.use(handler); // Mount the handler
+  app.listen(options.port, options.host, () => {
+    console.log(`🚀 Local PWA server running at http://${options.host}:${options.port}`);
+  });
+
+  
 // SSR requires that we export a single handler function called 'get', that
 // supports AWS use of the server that we created above.
 export const get = handler
