@@ -30,7 +30,7 @@ const options = {
     mobify: config,
 
     // The port that the local dev server listens on
-    port: process.env.PORT || 4000,
+    port: 3000,
 
     // The protocol on which the development Express app listens.
     // Note that http://localhost is treated as a secure context for development,
@@ -355,6 +355,9 @@ const {handler} = runtime.createHandler(options, (app) => {
 
     app.get('/worker.js(.map)?', runtime.serveServiceWorker)
     app.get('*', runtime.render)
+    app.listen(4000, () => {
+        console.log(`Server is running on ${options.protocol}://localhost:${options.port}`)
+    })
 })
 // SSR requires that we export a single handler function called 'get', that
 // supports AWS use of the server that we created above.
