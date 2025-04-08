@@ -279,8 +279,7 @@ export async function jwksCaching(req, res, options) {
 const {handler} = runtime.createHandler(options, (app) => {
     app.use(express.json()) // To parse JSON payloads
     app.use(express.urlencoded({extended: true}))
-    // Set default HTTP security headers required by PWA Kit
-    app.use(defaultPwaKitSecurityHeaders)
+
     // Set custom HTTP security headers
     app.use(
         helmet({
