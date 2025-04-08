@@ -31,7 +31,7 @@ const options = {
 
     // The port that the local dev server listens on
     port: process.env.PORT || 4000,
-    host: "0.0.0.0",
+
     // The protocol on which the development Express app listens.
     // Note that http://localhost is treated as a secure context for development,
     // except by Safari.
